@@ -12,3 +12,4 @@ def mathop(a, b, operation):
 
 mathop(10, 20, add)
 mathop(10, 20, mul)
+mathop(10, 20, lambda a, b: a - b)
