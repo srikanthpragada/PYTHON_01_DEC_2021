@@ -1,4 +1,7 @@
 class Student:
+    # Class attribute
+    courses = {"python": 10000, "java": 15000, "aws": 5000}
+
     # Constructor
     def __init__(self, name, course):
         # Object attributes
@@ -14,11 +17,18 @@ class Student:
         print(f"Course : {self.course}")
         print(f"Feepaid: {self.feepaid}")
 
+    def gettotalfee(self):
+        return Student.courses[self.course]
 
-# Create an object
-s1 = Student("Larry", "Python")
+    def getdue(self):
+        return self.gettotalfee() - self.feepaid
+
+    # Create an object
+
+
+s1 = Student("Larry", "python")
 s1.course = "Java"
 s1.payment(5000)
 s1.payment(5000)
 s1.show()
-s2 = Student("Mark", "Java")
+s2 = Student("Mark", "java")
