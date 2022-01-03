@@ -33,9 +33,12 @@ print(id(p1), id(p2))
 print(p1 == p2)  # p1.__eq__(p2)
 print(p1 != p2)
 
-persons = [Person("A", 20), Person("P", 40), Person("C", 30)]
+persons = [Person("A", 20), Person("B", 40), Person("C", 30)]
 
 for p in sorted(persons):
     print(p)
 
 print(int(p1) + int(p2))  # p1.__int__() + p2.__int__()
+
+for p in sorted(persons, key=lambda p: p.name):
+    print(p)
