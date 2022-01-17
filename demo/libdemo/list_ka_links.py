@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-WEBSITE = "http://www.srikanthtechnologies.com"
+WEBSITE = "https://www.khanacademy.org"
 resp = requests.get(WEBSITE)
 if resp.status_code != 200:
     print("Sorry! Could not get details!")
@@ -17,8 +17,9 @@ for a in links:
     if href == "#":
         continue
     if not href.startswith("http"):
-        href = WEBSITE + "/" + href
+        if href.startswith("/"):
+            href = WEBSITE + href
+        else:
+            href = WEBSITE + "/" + href
 
     print(href)
-
-
