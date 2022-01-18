@@ -16,7 +16,7 @@ cur = con.cursor()
 cur.execute("select * from employees")  # SQL Command
 
 for emp in cur.fetchall():
-    employees.append(emp_to_dict(emp))
+    employees.append(emp_to_dict(emp)) # Tuple to dict
 
 cur.close()
 con.close()
